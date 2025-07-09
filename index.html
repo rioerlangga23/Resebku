@@ -399,5 +399,70 @@
     </script>
 =======
 
+>>>>>>> REPLACE```diff
+<<<<<<< SEARCH
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">Login</button>
+=======
+            <!-- Login button removed to make recipes freely accessible -->
+>>>>>>> REPLACE
+2. Change recipe buttons from submit buttons to regular links:
+
+```html
+```diff
+<<<<<<< SEARCH
+                        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Lihat Resep</button>
+=======
+                        <button onclick="showRecipeDetail('Rendang Daging')" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Lihat Resep</button>
 >>>>>>> REPLACE
 
+3. Add recipe detail section at bottom:
+
+```html
+```diff
+<<<<<<< SEARCH
+    </footer>
+=======
+    </footer>
+    
+    <!-- Detail Resep Section -->
+    <section id="resep-detail" class="py-12 px-4 bg-white hidden">
+        <div class="container mx-auto max-w-4xl">
+            <button onclick="closeDetail()" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Kembali
+            </button>
+            <!-- Detail resep akan ditampilkan di sini -->
+            <div id="recipe-content"></div>
+        </div>
+    </section>
+4. Add new JavaScript functions:
+
+```html
+```diff
+<<<<<<< SEARCH
+    </script>
+=======
+    </script>
+    <script>
+        // Fungsi untuk menampilkan detail resep
+        function showRecipeDetail(recipeId) {
+            const detailSection = document.getElementById('resep-detail');
+            detailSection.classList.remove('hidden');
+            // Isi konten resep disesuaikan dengan ID resep
+            document.getElementById('recipe-content').innerHTML = `
+                <h2 class="text-3xl font-bold mb-4">${recipeId}</h2>
+                <p class="mb-6">Seluruh detail resep ditampilkan di sini tanpa perlu login</p>
+            `;
+            // Scroll ke bagian detail
+            detailSection.scrollIntoView();
+        }
+
+        function closeDetail() {
+            document.getElementById('resep-detail').classList.add('hidden');
+        }
+    </script>
+>>>>>>> REPLACE
+
+>>>>>>> REPLACE
